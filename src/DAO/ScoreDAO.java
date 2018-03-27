@@ -43,7 +43,7 @@ public class ScoreDAO {
 	public void writeScore() {
 		try {
 			printWriter = new PrintWriter(
-					new OutputStreamWriter(new BufferedOutputStream(new FileOutputStream("d://highscore.score"))),true);
+					new OutputStreamWriter(new BufferedOutputStream(new FileOutputStream("highscore.score"))),true);
 			for (int i = 0; i < 10; i++) {
 				
 				printWriter.println(dataScore.get(i).getName()+"\t"+dataScore.get(i).getScore());
@@ -57,7 +57,7 @@ public class ScoreDAO {
 	public void loadDataScore() {
 		try {
 			buffReader = new BufferedReader(new InputStreamReader(
-					new BufferedInputStream(new FileInputStream("d://highscore.score")), "UTF-8"));
+					new BufferedInputStream(new FileInputStream("highscore.score")), "UTF-8"));
 			String line;
 			while ((line = buffReader.readLine()) != null) {
 				sToken = new StringTokenizer(line, "\t");
